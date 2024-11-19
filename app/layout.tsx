@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
-        <NextTopLoader showSpinner={false} height={2} color="#E11C48"/>
+        <NextTopLoader showSpinner={false} height={2} color="#E11C48" />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

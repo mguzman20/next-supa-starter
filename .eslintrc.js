@@ -13,17 +13,17 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-react": "off",
-    "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/no-unused-vars": "warn",
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-uses-react': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn',
   },
   overrides: [
     {
-      files: ["./components/ui/**/*.tsx"], // Adjust this path
+      files: ['./components/ui/**/*.tsx'], // Adjust this path
       rules: {
-        "react/prop-types": "off" // Disable prop-types for these files
-      }
-    }
-  ]
+        'react/prop-types': 'off', // Disable prop-types for these files
+      },
+    },
+  ],
 };

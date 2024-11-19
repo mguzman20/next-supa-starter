@@ -8,7 +8,7 @@ interface BenefitsProps {
     imgPos?: 'left' | 'right';
     title: string;
     desc: string;
-    image: any;
+    image: string;
     bullets: {
       title: string;
       desc: string;
@@ -33,7 +33,7 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
             alt="Benefits"
             className={'object-cover'}
             placeholder="blur"
-            blurDataURL={data.image.src}
+            
           />
         </div>
       </div>
