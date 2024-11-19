@@ -7,12 +7,23 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: 'module',
   },
   rules: {
-    // Add your custom ESLint rules here
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
   },
+  overrides: [
+    {
+      files: ["./components/ui/**/*.tsx"], // Adjust this path
+      rules: {
+        "react/prop-types": "off" // Disable prop-types for these files
+      }
+    }
+  ]
 };
