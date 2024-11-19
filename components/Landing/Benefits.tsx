@@ -1,23 +1,22 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import { Container } from '@/components/Landing/Container';
 
 interface BenefitsProps {
   imgPos?: 'left' | 'right';
   data: {
-    imgPos?: 'left' | 'right';
     title: string;
     desc: string;
-    image: string;
+    image: StaticImageData;
     bullets: {
       title: string;
       desc: string;
-      icon: React.ReactNode;
+      icon: JSX.Element;
     }[];
   };
 }
 export const Benefits = (props: Readonly<BenefitsProps>) => {
-  const { data } = props;
+  const { data, imgPos } = props;
   return (
     <Container className="mb-20 flex flex-wrap lg:flex-nowrap lg:gap-10">
       <div
@@ -40,7 +39,7 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
 
       <div
         className={`flex w-full flex-wrap items-center lg:w-1/2 ${
-          data.imgPos === 'right' ? 'lg:justify-end' : ''
+          imgPos === 'right' ? 'lg:justify-end' : ''
         }`}
       >
         <div>
@@ -66,6 +65,8 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
     </Container>
   );
 };
+
+
 
 function Benefit(props: any) {
   return (

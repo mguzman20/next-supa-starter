@@ -1,2 +1,3 @@
 # .eslintignore
 components/ui/
+tailwind.config.ts
