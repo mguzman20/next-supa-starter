@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 import { Navbar } from '@/components/Navbar';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import NextTopLoader from 'nextjs-toploader';
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
+        <NextTopLoader showSpinner={false} height={2} color="#E11C48"/>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
