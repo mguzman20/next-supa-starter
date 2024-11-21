@@ -1,71 +1,48 @@
+import { ArrowDownRight } from 'lucide-react';
 import Image from 'next/image';
-import { Container } from '@/components/Landing/Container';
-import heroImg from '@/public/img/hero.png';
-import { Button } from '../ui/button';
 
-export const Hero = () => {
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+
+export  function Hero () {
   return (
-    <>
-      <Container className="flex flex-wrap">
-        <div className="flex w-full items-center lg:w-1/2">
-          <div className="mb-8 max-w-2xl">
-            <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 dark:text-white lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight">
-              Example
+    <section>
+      <div className="container">
+        <div className="grid items-center gap-8 lg:grid-cols-2">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <Badge variant="outline">
+              New Release
+              <ArrowDownRight className="ml-2 size-4" />
+            </Badge>
+            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
+              Welcome to Our Website
             </h1>
-            <p className="py-5 text-xl leading-normal text-gray-500 dark:text-gray-300 lg:text-xl xl:text-2xl">
-              Nextly is a free landing page & marketing website template for startups and indie
-              projects. Its built with Next.js & TailwindCSS. And its completely open-source.
+            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
+              doloremque mollitia fugiat omnis! Porro facilis quo animi
+              consequatur. Explicabo.
             </p>
-
-            <div className="flex flex-col items-start space-y-3 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
-              <Button size="xl" variant="default" className="w-full text-xl sm:w-auto">
-                Get Started
+            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+              <Button className="w-full sm:w-auto">Primary Button</Button>
+              <Button variant="outline" className="w-full sm:w-auto">
+                Secondary Button
+                <ArrowDownRight className="ml-2 size-4" />
               </Button>
             </div>
           </div>
-        </div>
-        <div className="flex w-full items-center justify-center lg:w-1/2">
-          <div className="">
-            <Image
-              src={heroImg}
-              width="616"
-              height="617"
-              className={'object-cover'}
-              alt="Hero Illustration"
-              loading="eager"
-              placeholder="blur"
-            />
-          </div>
-        </div>
-      </Container>
-      {/* <Container>
-        <div className="flex flex-col justify-center">
-          <div className="text-xl text-center text-gray-700 dark:text-white">
-            Trusted by <span className="text-indigo-600">2000+</span>{" "}
-            customers worldwide
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
-            <div className="pt-2 text-gray-400 dark:text-gray-400">
-              <AmazonLogo />
-            </div>
-            <div className="text-gray-400 dark:text-gray-400">
-              <VerizonLogo />
-            </div>
-            <div className="text-gray-400 dark:text-gray-400">
-              <MicrosoftLogo />
-            </div>
-            <div className="pt-1 text-gray-400 dark:text-gray-400">
-              <NetflixLogo />
-            </div>
-            <div className="pt-2 text-gray-400 dark:text-gray-400">
-              <SonyLogo />
-            </div>
-          </div>
-        </div>
-      </Container> */}
-    </>
+          <Image
+            src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
+            alt="placeholder hero"
+            width={500}
+            height={500}
+            className="max-h-96 w-full rounded-md object-cover"
+          />
+        
+      </div>
+      </div>
+    </section>
   );
 };
+
 
 

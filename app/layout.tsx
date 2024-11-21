@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { Navbar } from '@/components/Navbar';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import NextTopLoader from 'nextjs-toploader';
+import { Footer } from '@/components/Footer';
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -31,11 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex w-full flex-1 flex-col items-center">
               <Navbar />
               <div className="flex max-w-5xl flex-col p-0 sm:p-5">{children}</div>
-
-              <footer className="mx-auto flex w-full items-center justify-center gap-8 border-t py-16 text-center text-xs">
-                <p>Made by Matias Guzman</p>
-                <ThemeSwitcher />
-              </footer>
+              <Footer />
             </div>
           </main>
           <Toaster />

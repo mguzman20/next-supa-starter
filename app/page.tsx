@@ -5,9 +5,10 @@ import { Benefits } from '@/components/Landing/Benefits';
 import { Faq } from '@/components/Landing/Faq';
 
 import { benefitOne, benefitTwo } from '@/components/Landing/data';
+import { Cta } from '@/components/Landing/Cta';
 export default function Home() {
   return (
-    <Container>
+    <Container className='flex flex-col gap-16'>
       <Hero />
       <SectionTitle preTitle="Nextly Benefits" title=" Why should you use this landing page">
         Nextly is a free landing page & marketing website template for startups and indie projects.
@@ -22,6 +23,8 @@ export default function Home() {
         page with video has 3% more conversion rate. So, don&apos;t forget to add one. Just like
         this.
       </SectionTitle>
+
+      <Cta />
 
       {/* <SectionTitle
         preTitle="Testimonials"
