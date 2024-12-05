@@ -20,7 +20,7 @@ export  function Hero () {
             <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
               doloremque mollitia fugiat omnis! Porro facilis quo animi
-              consequatur. Explicabo.
+              consequatur.
             </p>
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
               <Button className="w-full sm:w-auto">Primary Button</Button>
