@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import { InfoIcon } from 'lucide-react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
@@ -28,12 +28,6 @@ export default async function ProtectedPage() {
           user_id, title, body
         </div>
       </div>
-      <Button size="sm" variant="default">
-        <Link href={'/notes'}>Go to notes (server)</Link>
-      </Button>
-      <Button size="sm" variant="outline">
-        <Link href={'/notes-client'}>Go to notes (client)</Link>
-      </Button>
       <div className="flex flex-col items-start gap-2">
         <h2 className="mb-4 text-2xl font-bold">Your user details</h2>
         <pre className="max-h-32 overflow-auto rounded border p-3 font-mono text-xs">

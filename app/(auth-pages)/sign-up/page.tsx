@@ -1,4 +1,4 @@
-import { signUpAction } from '@/utils/supabase/actions';
+import { signUpAction } from '@/lib/supabase/actions';
 import { FormMessage, Message } from '@/components/form-message';
 import { SubmitButton } from '@/components/submit-button';
 import { Input } from '@/components/ui/input';
