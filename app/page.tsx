@@ -8,7 +8,7 @@ import { benefitOne, benefitTwo } from '@/components/Landing/data';
 import { Cta } from '@/components/Landing/Cta';
 export default function Home() {
   return (
-    <Container className='flex flex-col gap-16'>
+    <Container className="flex flex-col gap-16">
       <Hero />
       <SectionTitle preTitle="Benefits" title=" Why should you use this landing page">
         Nextly is a free landing page & marketing website template for startups and indie projects.
