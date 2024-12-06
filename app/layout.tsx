@@ -3,7 +3,6 @@ import { ThemeProvider } from 'next-themes';
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 import { Navbar } from '@/components/Navbar';
-import { ThemeSwitcher } from '@/components/theme-switcher';
 import NextTopLoader from 'nextjs-toploader';
 import { Footer } from '@/components/Footer';
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ThemeSwitcher } from './theme-switcher';
 
 const sections = [
   {
@@ -74,6 +75,9 @@ export function Footer() {
               </li>
               <li className="underline hover:text-primary">
                 <a href="#"> Privacy Policy</a>
+              </li>
+              <li>
+                <ThemeSwitcher />
               </li>
             </ul>
           </div>

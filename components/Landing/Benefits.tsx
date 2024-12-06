@@ -65,7 +65,7 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
   );
 };
 
-function Benefit(props: any) {
+function Benefit(props: { title: string; icon: JSX.Element; children: React.ReactNode }) {
   return (
     <div className="mt-8 flex items-start space-x-3">
       <div className="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-primary">
