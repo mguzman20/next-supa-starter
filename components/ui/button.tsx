@@ -50,7 +50,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isLoading}
         {...props}
       >
-        {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin text-muted stroke-foreground" />}
+        {isLoading && (
+          <Loader2 className="mr-2 h-5 w-5 animate-spin stroke-foreground text-muted" />
+        )}
         <Slottable>{children}</Slottable>
       </Comp>
     );

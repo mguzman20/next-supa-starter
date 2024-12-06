@@ -54,13 +54,13 @@ export default function SignIn() {
         className="mx-auto flex min-w-64 max-w-64 flex-col gap-4"
       >
         <div>
-        <h1 className="text-2xl font-medium">Sign in</h1>
-      <p className="text-sm text-foreground">
-        Don&apos;t have an account?{' '}
-        <Link className="font-medium text-foreground underline" href="/sign-up">
-          Sign up
-        </Link>
-      </p>
+          <h1 className="text-2xl font-medium">Sign in</h1>
+          <p className="text-sm text-foreground">
+            Don&apos;t have an account?{' '}
+            <Link className="font-medium text-foreground underline" href="/sign-up">
+              Sign up
+            </Link>
+          </p>
         </div>
 
         <FormField
@@ -86,9 +86,11 @@ export default function SignIn() {
               <FormControl>
                 <Input type="password" {...field} />
               </FormControl>
-              <FormDescription><Link className="text-xs text-foreground underline" href="/forgot-password">
-            Forgot Password?
-          </Link></FormDescription>
+              <FormDescription>
+                <Link className="text-xs text-foreground underline" href="/forgot-password">
+                  Forgot Password?
+                </Link>
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

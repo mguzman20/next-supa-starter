@@ -19,7 +19,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
 
 const forgotPasswordSchema = z.object({
-  email: z.string().email()
+  email: z.string().email(),
 });
 
 type ForgotPasswordForm = z.infer<typeof forgotPasswordSchema>;
@@ -48,7 +48,7 @@ export default function ForgotPassword() {
         className="mx-auto flex min-w-64 max-w-64 flex-col gap-4"
       >
         <div>
-        <h1 className="text-2xl font-medium">Reset Password</h1>
+          <h1 className="text-2xl font-medium">Reset Password</h1>
           <p className="text-sm text-secondary-foreground">
             Already have an account?{' '}
             <Link className="text-primary underline" href="/sign-in">

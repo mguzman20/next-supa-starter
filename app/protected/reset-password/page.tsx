@@ -49,8 +49,8 @@ export default function ResetPassword() {
         className="mx-auto flex min-w-64 max-w-64 flex-col gap-4"
       >
         <div>
-        <h1 className="text-2xl font-medium">Reset password</h1>
-      <p className="text-sm text-foreground/60">Please enter your new password below.</p>
+          <h1 className="text-2xl font-medium">Reset password</h1>
+          <p className="text-sm text-foreground/60">Please enter your new password below.</p>
         </div>
 
         <FormField
