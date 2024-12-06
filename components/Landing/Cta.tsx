@@ -10,8 +10,8 @@ export function Cta() {
               Call to Action
             </h3>
             <p className="text-muted-foreground lg:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-              doloremque mollitia fugiat omnis!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
+              fugiat omnis!
             </p>
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
@@ -22,5 +22,4 @@ export function Cta() {
       </div>
     </section>
   );
-};
-
+}

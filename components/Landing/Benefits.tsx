@@ -32,7 +32,6 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
             alt="Benefits"
             className={'object-cover'}
             placeholder="blur"
-            
           />
         </div>
       </div>
@@ -65,8 +64,6 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
     </Container>
   );
 };
-
-
 
 function Benefit(props: any) {
   return (

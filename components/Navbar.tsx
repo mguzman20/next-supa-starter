@@ -19,7 +19,7 @@ export function Navbar() {
             Example
           </Link>
         </div>
-        <NavigationMenu>
+        <NavigationMenu className="hidden md:block">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
