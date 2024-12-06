@@ -1,18 +1,54 @@
-import { forgotPasswordAction } from '@/lib/supabase/actions';
-import { FormMessage, Message } from '@/components/form-message';
-import { SubmitButton } from '@/components/submit-button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import Link from 'next/link';
-import { SmtpMessage } from '../smtp-message';
+'use client';
 
-export default async function ForgotPassword(props: { searchParams: Promise<Message> }) {
-  const searchParams = await props.searchParams;
+import { forgotPasswordAction } from '@/lib/supabase/actions';
+import { Button } from '@/components/ui/button';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import Link from 'next/link';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { toast } from 'sonner';
+
+const forgotPasswordSchema = z.object({
+  email: z.string().email()
+});
+
+type ForgotPasswordForm = z.infer<typeof forgotPasswordSchema>;
+
+export default function ForgotPassword() {
+  const form = useForm<ForgotPasswordForm>({
+    resolver: zodResolver(forgotPasswordSchema),
+  });
+
+  async function onSubmit(data: ForgotPasswordForm) {
+    const formData = new FormData();
+    formData.append('email', data.email);
+    const res = await forgotPasswordAction(formData);
+
+    if (res.status === 'error') {
+      toast.error(res.message);
+    } else {
+      toast.success(res.message);
+    }
+  }
+
   return (
-    <>
-      <form className="mx-auto flex w-full min-w-64 max-w-64 flex-1 flex-col gap-2 text-foreground [&>input]:mb-6">
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="mx-auto flex min-w-64 max-w-64 flex-col gap-4"
+      >
         <div>
-          <h1 className="text-2xl font-medium">Reset Password</h1>
+        <h1 className="text-2xl font-medium">Reset Password</h1>
           <p className="text-sm text-secondary-foreground">
             Already have an account?{' '}
             <Link className="text-primary underline" href="/sign-in">
@@ -20,14 +56,25 @@ export default async function ForgotPassword(props: { searchParams: Promise<Mess
             </Link>
           </p>
         </div>
-        <div className="mt-8 flex flex-col gap-2 [&>input]:mb-3">
-          <Label htmlFor="email">Email</Label>
-          <Input name="email" placeholder="you@example.com" required />
-          <SubmitButton formAction={forgotPasswordAction}>Reset Password</SubmitButton>
-          <FormMessage message={searchParams} />
-        </div>
+
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input placeholder="you@email.com" {...field} />
+              </FormControl>
+              <FormDescription>Enter your email address</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" isLoading={form.formState.isSubmitting}>
+          Reset Password
+        </Button>
       </form>
-      <SmtpMessage />
-    </>
+    </Form>
   );
 }
