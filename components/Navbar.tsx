@@ -9,6 +9,10 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
+import { Button } from './ui/button';
+import { Menu } from 'lucide-react';
+import React from 'react';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 export function Navbar() {
   return (
@@ -19,7 +23,7 @@ export function Navbar() {
             Example
           </Link>
         </div>
-        <NavigationMenu className="hidden md:block">
+        <NavigationMenu className='hidden md:block'>
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
@@ -65,7 +69,75 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
+        <div className='hidden md:flex'>
         <HeaderAuth />
+        </div>
+
+
+        <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left">
+                <SheetTitle>
+                  <p className="text-xl font-extralight tracking-wider text-foreground sm:text-2xl">
+                    Example
+                  </p>
+                </SheetTitle>
+                <div className="my-5 grid gap-6 p-6">
+                  <SheetTrigger asChild>
+                    <Link
+                      href="/"
+                      className="text-sm font-medium underline-offset-4 hover:underline"
+                      prefetch={false}
+                    >
+                      Home
+                    </Link>
+                  </SheetTrigger>
+                  <SheetTrigger asChild>
+                    <Link
+                      href="/about"
+                      className="text-sm font-medium underline-offset-4 hover:underline"
+                      prefetch={false}
+                    >
+                      About
+                    </Link>
+                  </SheetTrigger>
+                  <SheetTrigger asChild>
+                    <Link
+                      href="/blog"
+                      className="text-sm font-medium underline-offset-4 hover:underline"
+                      prefetch={false}
+                    >
+                      Blog
+                    </Link>
+                  </SheetTrigger>
+                  <hr />
+                    <SheetTrigger asChild>
+                      <Link
+                        href='#'
+                        className="text-sm font-medium underline-offset-4 hover:underline"
+                        prefetch={false}
+                      >
+                        Documentation
+                      </Link>
+                    </SheetTrigger>
+                  <hr />
+                  <SheetTrigger asChild>
+                    <Link
+                      href="/contact"
+                      className="text-sm font-medium underline-offset-4 hover:underline"
+                      prefetch={false}
+                    >
+                      Contact
+                    </Link>
+                  </SheetTrigger>
+                </div>
+              </SheetContent>
+            </Sheet>
       </div>
     </nav>
   );
